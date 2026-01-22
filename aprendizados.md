@@ -16,3 +16,98 @@ Ou seja, transforma '12', '1' e '5.10' em números reais:
 
 4 -  x1, y1 = ... Aqui ocorre a atribuição.O Python pega os valores retornados e coloca em cada variável respectivamente (primeiro valor é armazenado na primeira variável):
 > cod1 = 12 <br> num1 = 1 <br> valor1 = 5.10
+---
+
+## Dia 03
+
+### 🧠 Entendendo a Conversão de Tempo em Algoritmos
+
+Quando precisamos calcular quanto tempo passou entre dois horários (por exemplo, o início e o fim de um jogo), encontramos um problema comum:
+
+>As unidades de tempo são diferentes (horas, minutos e segundos).
+
+Por isso, a primeira etapa é converter tudo para a menor unidade possível — normalmente segundos ou minutos — para facilitar o cálculo da diferença.
+
+---
+
+### 1. Converter tudo para a menor unidade de tempo
+
+Sabendo que:<br>
+1 hora = 60 minutos <br>
+1 minuto = 60 segundos <br>
+Logo, 1 hora = 3600 segundos
+
+Podemos representar qualquer horário (h:m:s) como segundos totais:
+
+>tempo_total = ℎ × 3600 + 𝑚 × 60 + 𝑠
+
+Isso transforma tudo em um único número — facilitando a subtração depois.
+
+---
+
+### 2. Calcular a diferença entre o tempo final e o inicial
+
+> duracao = tempo_final_em_segundos −  tempo_inicial_em_segundos
+
+Mas, se o jogo começou em um dia e terminou em outro (por exemplo, começou às 22h e terminou às 2h da manhã), o resultado dessa subtração será zero ou negativo.
+Isso acontece porque o relógio “reiniciou” ao passar da meia-noite.
+
+---
+### 3. Corrigir casos em que o jogo atravessa a meia-noite
+
+Como o relógio zera a cada 24 horas, se o resultado for menor ou igual a zero, adicionamos o total de segundos de um dia inteiro:
+
+>duracao += 24 × 3600
+
+--- 
+### 4. Converter o resultado de volta para horas, minutos e segundos
+
+Depois de obter o tempo total em segundos, precisamos voltar para o formato legível (h:m:s):
+
+Sabendo que 1 hora = 3600 segundos,
+podemos descobrir quantas horas inteiras cabem dentro da duração total usando divisão inteira (//):
+
+> horas = duracao // 3600
+
+💡Explicação: A divisão inteira pega apenas a parte completa do resultado e ignora o resto.
+
+>📘 Exemplo:<br>
+duracao = 10800  # segundos <br>
+horas = 10800 // 3600  # → 3
+
+✅ Resultado: 3 horas completas.
+
+#### Descobrindo os minutos
+
+Depois de retirar as horas, ainda sobram alguns segundos — o resto da divisão por 3600.
+Usamos o operador módulo (%) para pegar esse resto, e depois transformamos o que sobrou em minutos:
+
+> minutos = (duracao % 3600) // 60
+
+
+💡 Por que isso funciona: <br>
+duracao % 3600 → dá o que sobrou após tirar todas as horas completas. // 60 → converte esse resto (em segundos) em minutos inteiros.
+
+>📘 Exemplo:<br>
+duracao = 10920  # segundos (3 horas, 2 minutos) <br>
+minutos = (10920 % 3600) // 60 <br>
+10920 % 3600 = 120  (sobraram 120 segundos após as 3 horas)<br>
+ 120 // 60 = 2
+
+✅ Resultado: 2 minutos.
+
+#### Descobrindo os segundos
+
+Por fim, para saber quantos segundos sobraram depois de tirar horas e minutos inteiros, usamos novamente o operador % (resto):
+
+>segundos = duracao % 60
+
+
+>📘 Exemplo:<br>
+duracao = 10923  # segundos<br>
+segundos = 10923 % 60  # → 3
+
+✅ Resultado: 3 segundos.
+
+
+
