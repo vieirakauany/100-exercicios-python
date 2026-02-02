@@ -110,4 +110,47 @@ segundos = 10923 % 60  # → 3
 ✅ Resultado: 3 segundos.
 
 
+## Dia 09 e 10
+
+#### 🔍 Busca em vetores<br>
+A busca em um vetor (ou lista) significa procurar um valor específico entre os elementos armazenados.
+
+A forma mais comum é com um loop:<br>
+>for i in range(len(lista)): <br>
+    &nbsp;&nbsp;&nbsp;&nbsp;if lista[i] == valor: <br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    print("Encontrado na posição", i)
+
+
+Para buscar de trás para frente, você pode usar o índice negativo:
+
+<ul>
+<li>-1 representa o último elemento</li>
+<li>-2, o penúltimo, e assim por diante.</li>
+</ul>
+Exemplo:<br><br>
+
+>print(lista[-1])  # Último elemento
+
+
+Também é possível percorrer a lista de forma invertida:
+
+>for i in range(len(lista)-1, -1, -1):<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;  print(lista[i])  # percorre do fim para o início
+---
+#### ⚙️ Principais métodos de listas em Python
+
+  | Método | Função | Exemplo |
+|--------|---------|---------|
+| `append(x)` | Adiciona um elemento ao final da lista | `lista.append(10)` |
+| `insert(i, x)` | Insere um elemento na posição `i` | `lista.insert(2, 5)` |
+| `pop()` | Remove e retorna o último elemento | `lista.pop()` |
+| `remove(x)` | Remove o primeiro elemento igual a `x` | `lista.remove(3)` |
+| `index(x)` | Retorna o índice do primeiro elemento igual a `x` | `lista.index(7)` |
+| `count(x)` | Conta quantas vezes `x` aparece | `lista.count(2)` |
+| `reverse()` | Inverte a ordem dos elementos | `lista.reverse()` |
+| `sort()` | Ordena os elementos (crescente por padrão) | `lista.sort()` |
+| `copy()` | Cria uma cópia da lista | `nova = lista.copy()` |
+| `clear()` | Apaga todos os elementos da lista | `lista.clear()` |
+
+
 
