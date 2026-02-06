@@ -19,8 +19,8 @@ O objetivo é fortalecer minha base lógica e aprimorar raciocínio para desafio
 | 09  | 041 a 045 | Vetores — criação e percorrimento|
 | 10  | 046 a 050 | Vetores e operações básicas (soma, média, busca)|
 | 11  | 051 a 055 | Listas e operações básicas - parte 2|
-| 12  | 056 a 060 |Matrizes (listas de listas) - acesso por índices e operações básica|
-| 13  | 061 a 065 |Matrizes - parte 2 |
+| 12  | 056 a 060 | Matrizes (listas de listas) - acesso por índices e operações básica|
+| 13  | 061 a 065 | Matrizes - parte 2 |
 | 14  | 066 a 070 | Manipulação de strings e laços sobre texto |
 | 15  | 071 a 075 | Dicionários |
 | 16  | 076 a 080 | Modularização de código e recursão|
