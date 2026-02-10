@@ -151,6 +151,40 @@ Também é possível percorrer a lista de forma invertida:
 | `sort()` | Ordena os elementos (crescente por padrão) | `lista.sort()` |
 | `copy()` | Cria uma cópia da lista | `nova = lista.copy()` |
 | `clear()` | Apaga todos os elementos da lista | `lista.clear()` |
+---
 
+## Dia 12
 
+Em uma **matriz quadrada** (n × n), as posições dos elementos podem ser classificadas conforme sua relação com as **diagonais principal e secundária**.  
+Essas relações são muito utilizadas em **algoritmos de processamento de matrizes**, como em operações de simetria, filtros de imagem, manipulação de dados e otimização de cálculos.
+
+---
+
+### 🧩 Conceitos Básicos
+
+- **Diagonal Principal:** posições onde o índice da linha é igual ao da coluna (`i = j`).
+- **Diagonal Secundária:** posições onde a soma dos índices é igual a `n - 1` (`i + j = n - 1`).
+
+Com base nelas, podemos identificar áreas específicas da matriz.
+
+---
+
+### 📘 Tabela de Regiões
+
+| Região                         | Condição Matemática         | Descrição Didática                                                                 |
+|--------------------------------|-----------------------------|------------------------------------------------------------------------------------|
+| **Acima da Diagonal Principal** | `j > i`                     | Elementos acima da diagonal principal.                                             |
+| **Abaixo da Diagonal Principal**| `j < i`                     | Elementos abaixo da diagonal principal.                                            |
+| **Acima da Diagonal Secundária**| `i + j < n - 1`             | Elementos acima da diagonal secundária.                                            |
+| **Abaixo da Diagonal Secundária**| `i + j > n - 1`             | Elementos abaixo da diagonal secundária.                                           |
+| **Área Superior**               | `j > i` **e** `i + j < n - 1`| Parte superior da matriz (acima das duas diagonais).                              |
+| **Área Inferior**               | `j < i` **e** `i + j > n - 1`| Parte inferior da matriz (abaixo das duas diagonais).                              |
+| **Área Esquerda**               | `j < i` **e** `i + j < n - 1`| Região à esquerda, entre a diagonal principal e a secundária.                      |
+| **Área Direita**                | `j > i` **e** `i + j > n - 1`| Região à direita, entre a diagonal principal e a secundária.                       |
+
+---
+<br>
+
+> **Resumo:**  
+> Identificar as regiões da matriz em relação às diagonais é uma ferramenta poderosa para **otimizar algoritmos e compreender a estrutura de dados bidimensionais**, sendo muito usada em lógica computacional e ciência de dados.
 
