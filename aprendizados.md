@@ -188,3 +188,77 @@ Com base nelas, podemos identificar áreas específicas da matriz.
 > **Resumo:**  
 > Identificar as regiões da matriz em relação às diagonais é uma ferramenta poderosa para **otimizar algoritmos e compreender a estrutura de dados bidimensionais**, sendo muito usada em lógica computacional e ciência de dados.
 
+## Dia 13
+
+### 🧩 Algoritmos de Posições Adjacentes em Matrizes
+
+#### 📘 O que são posições adjacentes?
+
+Em uma **matriz bidimensional (2D)**, dizemos que **duas posições são adjacentes** quando estão **lado a lado** — ou seja, **acima, abaixo, à esquerda, à direita** ou até mesmo **nas diagonais** uma da outra.
+
+Essas relações são muito úteis em **jogos de tabuleiro**, **busca em labirintos**, **simulações**, **processamento de imagens**, e diversos problemas que envolvem movimentação em grades.
+
+---
+
+#### 🔢 Exemplo visual
+
+Considere a matriz 3x3 abaixo com índices (linha, coluna):
+
+|       | 0 | 1 | 2 |
+|:------:|:--:|:--:|:--:|
+| **0** | (0,0) | (0,1) | (0,2) |
+| **1** | (1,0) | (1,1) | (1,2) |
+| **2** | (2,0) | (2,1) | (2,2) |
+
+Se estivermos na posição **(1,1)**, as **posições adjacentes ortogonais** (sem diagonais) são:
+- Cima → (0,1)
+- Baixo → (2,1)
+- Esquerda → (1,0)
+- Direita → (1,2)
+
+E as **posições adjacentes diagonais** são:
+- Cima-esquerda → (0,0)
+- Cima-direita → (0,2)
+- Baixo-esquerda → (2,0)
+- Baixo-direita → (2,2)
+
+---
+
+#### 🧮 Representando direções com vetores
+
+Podemos representar as direções adjacentes com **pares de deslocamento** `(dx, dy)`.
+
+#### 🔹 💡 Exemplo prático (com diagonais)
+```python
+matriz = [
+    [10, 11, 12],
+    [13, 14, 15],
+    [16, 17, 18]
+]
+
+i, j = 1, 1  # posição do número 14
+direcoes = [
+    (-1,0), (1,0), (0,-1), (0,1),  # cima, baixo, esquerda, direita
+    (-1,-1), (-1,1), (1,-1), (1,1) # diagonais
+]
+
+linhas = len(matriz)
+colunas = len(matriz[0])
+
+print("Vizinhos de 14:")
+for dx, dy in direcoes:
+    ni, nj = i + dx, j + dy
+    if 0 <= ni < linhas and 0 <= nj < colunas:
+        print(matriz[ni][nj])
+
+#Saída
+11
+17
+13
+15
+10
+12
+16
+18
+```
+---
