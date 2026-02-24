@@ -22,7 +22,7 @@ O objetivo é fortalecer minha base lógica e aprimorar raciocínio para desafio
 | 12  | 056 a 060 | Matrizes (listas de listas) - acesso por índices e operações básica|
 | 13  | 061 a 065 | Matrizes - parte 2 |
 | 14  | 066 a 070 | Manipulação de strings e laços sobre texto |
-| 15  | 071 a 075 | Dicionários |
+| 15  | 071 a 075 | Manipulação de strings e laços sobre texto - parte 2 |
 | 16  | 076 a 080 | Modularização de código e recursão|
 | 17  | 081 a 085 | Lógica aplicada: problemas mistos (condição + repetição + lista)|
 | 18  | 086 a 090 | Algoritmos de ordenação e busca|
